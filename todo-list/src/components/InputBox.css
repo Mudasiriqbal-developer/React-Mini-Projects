@@ -1,0 +1,23 @@
+.input-box {
+  min-width: 400px;
+  height: 35px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  cursor: text;
+  border-radius: 5px;
+}
+.send-button {
+  background-color: rgb(25, 135, 84);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.task-box {
+  display: flex;
+  margin-bottom: auto;
+  margin-top: 30%;
+  gap: 10px;
+  justify-content: center;
+}

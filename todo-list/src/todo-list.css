@@ -1,0 +1,23 @@
+.heading1 {
+  color: #333;
+  font-family: 'Courier New', Courier, monospace;
+  /* font-family: Arial, sans-serif; */
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  word-spacing: 15px;
+  letter-spacing: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.heading2 {
+  color: #666;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: normal;
+  text-transform: capitalize;
+  letter-spacing: 5px;
+  cursor: default;
+}
