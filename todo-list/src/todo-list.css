@@ -1,25 +1,19 @@
 .heading1 {
   color: #333;
   font-family: 'Courier New', Courier, monospace;
-  /* font-family: Arial, sans-serif; */
   font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
   text-transform: uppercase;
-  word-spacing: 15px;
-  letter-spacing: 10px;
-  font-weight: bold;
-  cursor: pointer;
+  word-spacing: 12px;
+  letter-spacing: 8px;
   margin-bottom: 0px;
+  margin-top: 5px;
 }
 
 .heading2 {
   color: #666;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 20px;
-  font-weight: normal;
-  text-transform: capitalize;
-  letter-spacing: 5px;
-  cursor: default;
-  /* margin-top: 0px; */
+  font-size: 18px;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+  margin-top: 0px;
 }
