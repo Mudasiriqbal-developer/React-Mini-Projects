@@ -10,6 +10,7 @@
   letter-spacing: 10px;
   font-weight: bold;
   cursor: pointer;
+  margin-bottom: 0px;
 }
 
 .heading2 {
@@ -20,4 +21,5 @@
   text-transform: capitalize;
   letter-spacing: 5px;
   cursor: default;
+  /* margin-top: 0px; */
 }

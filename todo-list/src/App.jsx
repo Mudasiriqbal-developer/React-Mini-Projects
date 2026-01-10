@@ -1,15 +1,16 @@
 import { TodoList } from "./todo-list";
-import {InputBox} from "./components/InputBox";
-import './App.css';
+import { InputBox } from "./components/InputBox";
+import "./App.css";
 
 function App() {
-
   return (
     <>
-      <TodoList />
-      <InputBox />
+      <div className="app-container">
+        <TodoList />
+        <InputBox />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
