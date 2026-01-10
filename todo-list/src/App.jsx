@@ -1,4 +1,4 @@
-import { TodoList } from "./todo-list";
+import { TodoList } from "./components/todo-list";
 import { Messages } from "./components/Messages";
 import { InputBox } from "./components/InputBox";
 import "./App.css";
@@ -19,4 +19,3 @@ function App() {
 }
 
 export default App;
-
