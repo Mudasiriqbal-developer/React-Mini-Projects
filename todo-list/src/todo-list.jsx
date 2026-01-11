@@ -1,10 +1,7 @@
-// todo-list.jsx
 import  dayjs  from 'dayjs';
 import './todo-list.css';
 
 export const TodoList = ({ todosCount }) => {
-  const completedTasks = todosCount; // You can modify this when you track completed tasks
-  
   return (
     <div className="header-container">
       <h1 className="heading1">My Todo List</h1>

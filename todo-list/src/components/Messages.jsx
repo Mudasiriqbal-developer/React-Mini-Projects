@@ -1,4 +1,3 @@
-// Messages.jsx
 import { useState } from 'react';
 import './Messages.css';
 
