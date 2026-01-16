@@ -7,43 +7,40 @@ export function App() {
 
   const handleBtn = () => {
     if (isOn) {
-      setIsOn(false)
+      setIsOn(false);
     } else {
-      setIsOn(true)
+      setIsOn(true);
     }
   };
 
   const handleCount = () => {
     setCount(count + 1);
-  }
+  };
 
   const handleAuto = () => {
     setInterval(() => {
       setCount(count + 1);
     }, 1000);
-  }
+  };
 
   const reset = () => {
     setCount(0);
-  }
+  };
 
   return (
     <div>
       <h1>Hello, World!</h1>
-      <h2>Light is {isOn ? 'ON' : 'OFF'}</h2>
-      <button 
-        onClick={handleBtn}>
-        {isOn ? 'ON' : 'OFF'}
-      </button>
+      <h2>Light is {isOn ? "ON" : "OFF"}</h2>
+      <button onClick={handleBtn}>{isOn ? "ON" : "OFF"}</button>
 
-      <FirstFile 
-      count={count} 
-      handleCount={handleCount} 
-      reset={reset}
-      handleAuto={handleAuto}
-      setInterval={setInterval}
+      <FirstFile
+        count={count}
+        handleCount={handleCount}
+        reset={reset}
+        handleAuto={handleAuto}
+        setInterval={setInterval}
       />
     </div>
-  )
+  );
 }
 export default App;
