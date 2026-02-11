@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FirstFile } from "./components/FirstFile";
+import { Calculator } from "./components/Calculator";
 
 export function App() {
   const [isOn, setIsOn] = useState(false);
@@ -40,6 +41,8 @@ export function App() {
         handleAuto={handleAuto}
         setInterval={setInterval}
       />
+
+      <Calculator />
     </div>
   );
 }
