@@ -19,8 +19,8 @@ export function App() {
 
   const handleAuto = () => {
     setInterval(() => {
-      setCount(count + 1);
-    }, 1000);
+      handleCount();
+    }, 100);
   };
 
   const reset = () => {

@@ -1,5 +1,3 @@
-
-
 export function FirstFile({ count, handleCount, reset, handleAuto }) {
 
   return (
