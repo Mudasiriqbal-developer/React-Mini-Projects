@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FirstFile } from "./components/FirstFile";
-import { Calculator } from "./components/Calculator";
+import { Calculator } from "./components/calculator";
 
 export function App() {
   const [isOn, setIsOn] = useState(false);
