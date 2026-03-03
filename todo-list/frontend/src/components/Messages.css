@@ -10,6 +10,7 @@
   margin: 0;
   flex: 1;
   min-height: 0;
+  
 }
 
 /* Custom scrollbar */
@@ -33,7 +34,7 @@
 }
 
 .message-item {
-  background: white;
+  background: rgb(255, 255, 255);
   border-radius: 16px;
   padding: 20px 24px;
   display: flex;
@@ -203,6 +204,7 @@
   transition: border-color 0.3s ease;
   font-family: inherit;
   background: #f9fafb;
+  color:black;
 }
 
 .edit-input:focus {

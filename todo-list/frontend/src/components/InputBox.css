@@ -19,6 +19,7 @@
 
 .text-input {
   flex: 1;
+  color: black;
   padding: 18px 22px;
   border: 2px solid #e5e7eb;
   border-radius: 14px;
