@@ -9,6 +9,7 @@ import {
   Zap,
   ArrowRight,
   ChevronRight,
+  Camera,
 } from "lucide-react";
 import ServiceCard from "../components/ServiceCard";
 
@@ -19,16 +20,16 @@ const SERVICES = [
     description:
       "Get a professional, ATS-friendly CV in minutes. Our expert team crafts standout resumes that get you noticed.",
     tag: "Most Popular",
-    color: "#007BFF",
+    color: "#E31E24",
     page: "cv",
   },
   {
     icon: <Award size={24} />,
     title: "Certificate Design",
     description:
-      "Experience, Achievement & Custom Certificates. Beautiful, professionally designed certificates for every occasion.",
+      "Experience, Achievement & Custom Certificates. Beautifully designed for every occasion.",
     tag: "Premium",
-    color: "#7C3AED",
+    color: "#007BFF",
     page: "certificate",
   },
   {
@@ -49,6 +50,15 @@ const SERVICES = [
     color: "#28A745",
     page: "printing",
   },
+  {
+    icon: <Camera size={24} />,
+    title: "Photo Editing",
+    description:
+      "Passport-size photo conversion, background removal, and custom owner-designed layouts for any official document.",
+    tag: "New Service",
+    color: "#7C3AED",
+    page: "photo",
+  },
 ];
 
 const STATS = [
@@ -62,7 +72,7 @@ const STEPS = [
   {
     num: "01",
     title: "Choose a Service",
-    desc: "Pick from CV creation, certificates, job applications, or printing.",
+    desc: "Pick from CV creation, certificates, job applications, photo editing, or printing.",
   },
   {
     num: "02",
@@ -102,23 +112,22 @@ const TESTIMONIALS = [
   },
 ];
 
-export default function Home({ navigate, user }) {
+export default function Home({ navigate }) {
   return (
     <div>
-      {/* ── HERO ─────────────────────────────────────────── */}
+      {/* ── HERO ─────────────────────────────────── */}
       <section
         style={{
           minHeight: "90vh",
           display: "flex",
           alignItems: "center",
           background:
-            "linear-gradient(135deg, #f0f7ff 0%, #F4F7F6 50%, #f0fff4 100%)",
+            "linear-gradient(135deg, var(--primary-light) 0%, var(--bg) 50%, var(--accent-light) 100%)",
           position: "relative",
           overflow: "hidden",
           paddingTop: 40,
         }}
       >
-        {/* Decorative blobs */}
         <div
           style={{
             position: "absolute",
@@ -127,7 +136,7 @@ export default function Home({ navigate, user }) {
             width: 400,
             height: 400,
             borderRadius: "50%",
-            background: "rgba(0,123,255,0.05)",
+            background: "rgba(227,30,36,0.05)",
             zIndex: 0,
           }}
         />
@@ -139,18 +148,17 @@ export default function Home({ navigate, user }) {
             width: 300,
             height: 300,
             borderRadius: "50%",
-            background: "rgba(40,167,69,0.05)",
+            background: "rgba(0,123,255,0.05)",
             zIndex: 0,
           }}
         />
-        {/* Dot grid pattern */}
         <div
           style={{
             position: "absolute",
             inset: 0,
             zIndex: 0,
             backgroundImage:
-              "radial-gradient(circle, rgba(0,123,255,0.07) 1px, transparent 1px)",
+              "radial-gradient(circle,rgba(227,30,36,0.06) 1px,transparent 1px)",
             backgroundSize: "32px 32px",
           }}
         />
@@ -163,8 +171,8 @@ export default function Home({ navigate, user }) {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 8,
-                background: "rgba(0,123,255,0.08)",
-                border: "1px solid rgba(0,123,255,0.2)",
+                background: "rgba(227,30,36,0.08)",
+                border: "1px solid rgba(227,30,36,0.2)",
                 borderRadius: 99,
                 padding: "6px 16px",
                 marginBottom: 28,
@@ -180,60 +188,45 @@ export default function Home({ navigate, user }) {
                   animation: "pulse-ring 1.5s ease-out infinite",
                 }}
               />
-              <span style={{ fontSize: 13, fontWeight: 600, color: "#007BFF" }}>
+              <span
+                style={{
+                  fontSize: 13,
+                  fontWeight: 600,
+                  color: "var(--primary)",
+                }}
+              >
                 Available 24/7 — Fast Delivery
               </span>
             </div>
 
+            {/* ── UPDATED HERO HEADLINE ── */}
             <h1
               className="animate-fadeUp anim-delay-1"
               style={{
-                fontFamily: "Syne, sans-serif",
-                fontSize: "clamp(38px, 5.5vw, 68px)",
+                fontFamily: "Syne,sans-serif",
+                fontSize: "clamp(38px,5.5vw,68px)",
                 fontWeight: 800,
                 lineHeight: 1.1,
                 marginBottom: 24,
-                color: "#0d1117",
+                color: "var(--text)",
               }}
             >
-              Your Gateway to{" "}
-              <span
-                style={{
-                  color: "#007BFF",
-                  position: "relative",
-                  display: "inline-block",
-                }}
-              >
-                Professional
-                <span
-                  style={{
-                    position: "absolute",
-                    bottom: 2,
-                    left: 0,
-                    right: 0,
-                    height: 4,
-                    background: "linear-gradient(90deg, #007BFF, #28A745)",
-                    borderRadius: 99,
-                    opacity: 0.35,
-                  }}
-                />
-              </span>{" "}
-              Digital Services.
+              <span style={{ color: "var(--primary)" }}>MMK</span>{" "}
+              <span style={{ color: "var(--accent)" }}>Digital</span> Solution
             </h1>
 
             <p
               className="animate-fadeUp anim-delay-2"
               style={{
                 fontSize: 18,
-                color: "#6b7280",
+                color: "var(--text-muted)",
                 lineHeight: 1.75,
                 marginBottom: 36,
                 maxWidth: 560,
               }}
             >
-              CVs, certificates, job applications, and printing — all handled by
-              real professionals. Stop stressing about paperwork and start
-              focusing on what matters.
+              CVs, certificates, job applications, photo editing, and printing —
+              all handled by real professionals. Stop stressing about paperwork.
             </p>
 
             <div
@@ -248,15 +241,14 @@ export default function Home({ navigate, user }) {
                 Build My CV <ArrowRight size={18} />
               </button>
               <button
-                className="btn btn-outline"
-                onClick={() => navigate("certificate")}
+                className="btn btn-accent"
+                onClick={() => navigate("photo")}
                 style={{ padding: "15px 28px", fontSize: 16 }}
               >
-                Explore Services
+                Photo Editing
               </button>
             </div>
 
-            {/* Trust line */}
             <div
               className="animate-fadeUp anim-delay-4"
               style={{
@@ -267,7 +259,7 @@ export default function Home({ navigate, user }) {
               }}
             >
               <div style={{ display: "flex" }}>
-                {["#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4"].map((c, i) => (
+                {["#E31E24", "#007BFF", "#F59E0B", "#28A745"].map((c, i) => (
                   <div
                     key={i}
                     style={{
@@ -275,15 +267,15 @@ export default function Home({ navigate, user }) {
                       height: 30,
                       borderRadius: "50%",
                       background: c,
-                      border: "2px solid white",
+                      border: "2px solid var(--card-bg)",
                       marginLeft: i > 0 ? -10 : 0,
                     }}
                   />
                 ))}
               </div>
-              <span style={{ fontSize: 13, color: "#6b7280" }}>
+              <span style={{ fontSize: 13, color: "var(--text-muted)" }}>
                 Trusted by{" "}
-                <strong style={{ color: "#0d1117" }}>1,800+ clients</strong>{" "}
+                <strong style={{ color: "var(--text)" }}>1,800+ clients</strong>{" "}
                 across Pakistan
               </span>
             </div>
@@ -291,18 +283,24 @@ export default function Home({ navigate, user }) {
         </div>
       </section>
 
-      {/* ── STATS ─────────────────────────────────────────── */}
-      <section style={{ background: "#007BFF", padding: "48px 0" }}>
+      {/* ── STATS ─────────────────────────────────── */}
+      <section
+        style={{
+          background:
+            "linear-gradient(90deg,var(--primary) 0%,var(--accent) 100%)",
+          padding: "48px 0",
+        }}
+      >
         <div className="container">
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit,minmax(160px,1fr))",
               gap: 32,
             }}
           >
-            {STATS.map((stat, i) => (
-              <div key={i} style={{ textAlign: "center", color: "white" }}>
+            {STATS.map((s, i) => (
+              <div key={i} style={{ textAlign: "center", color: "#fff" }}>
                 <div
                   style={{
                     display: "flex",
@@ -311,25 +309,25 @@ export default function Home({ navigate, user }) {
                     opacity: 0.8,
                   }}
                 >
-                  {stat.icon}
+                  {s.icon}
                 </div>
                 <div
                   style={{
-                    fontFamily: "Syne, sans-serif",
+                    fontFamily: "Syne,sans-serif",
                     fontSize: 36,
                     fontWeight: 800,
                   }}
                 >
-                  {stat.value}
+                  {s.value}
                 </div>
-                <div style={{ fontSize: 14, opacity: 0.8 }}>{stat.label}</div>
+                <div style={{ fontSize: 14, opacity: 0.8 }}>{s.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── SERVICES ─────────────────────────────────────── */}
+      {/* ── SERVICES ─────────────────────────────── */}
       <section className="section">
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: 56 }}>
@@ -337,11 +335,11 @@ export default function Home({ navigate, user }) {
               style={{
                 display: "inline-block",
                 padding: "5px 16px",
-                background: "rgba(0,123,255,0.08)",
+                background: "var(--primary-light)",
                 borderRadius: 99,
                 fontSize: 12,
                 fontWeight: 700,
-                color: "#007BFF",
+                color: "var(--primary)",
                 marginBottom: 14,
                 letterSpacing: "0.5px",
                 textTransform: "uppercase",
@@ -351,17 +349,18 @@ export default function Home({ navigate, user }) {
             </div>
             <h2
               style={{
-                fontFamily: "Syne, sans-serif",
-                fontSize: "clamp(28px, 4vw, 42px)",
+                fontFamily: "Syne,sans-serif",
+                fontSize: "clamp(28px,4vw,42px)",
                 fontWeight: 800,
                 marginBottom: 14,
+                color: "var(--text)",
               }}
             >
               Everything You Need, In One Place
             </h2>
             <p
               style={{
-                color: "#6b7280",
+                color: "var(--text-muted)",
                 fontSize: 16,
                 maxWidth: 520,
                 margin: "0 auto",
@@ -371,8 +370,12 @@ export default function Home({ navigate, user }) {
               reliable, and affordable.
             </p>
           </div>
-
-          <div className="grid-4">
+          <div
+            className="grid-4"
+            style={{
+              gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))",
+            }}
+          >
             {SERVICES.map((s, i) => (
               <ServiceCard key={i} {...s} onClick={() => navigate(s.page)} />
             ))}
@@ -380,15 +383,15 @@ export default function Home({ navigate, user }) {
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ─────────────────────────────────── */}
-      <section className="section" style={{ background: "white" }}>
+      {/* ── HOW IT WORKS ─────────────────────────── */}
+      <section className="section section-alt">
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <div
               style={{
                 display: "inline-block",
                 padding: "5px 16px",
-                background: "rgba(40,167,69,0.08)",
+                background: "var(--green-light)",
                 borderRadius: 99,
                 fontSize: 12,
                 fontWeight: 700,
@@ -402,15 +405,15 @@ export default function Home({ navigate, user }) {
             </div>
             <h2
               style={{
-                fontFamily: "Syne, sans-serif",
-                fontSize: "clamp(28px, 4vw, 42px)",
+                fontFamily: "Syne,sans-serif",
+                fontSize: "clamp(28px,4vw,42px)",
                 fontWeight: 800,
+                color: "var(--text)",
               }}
             >
               How It Works
             </h2>
           </div>
-
           <div className="grid-4">
             {STEPS.map((step, i) => (
               <div
@@ -428,12 +431,10 @@ export default function Home({ navigate, user }) {
                       top: 28,
                       right: -12,
                       zIndex: 1,
-                      display: "flex",
-                      alignItems: "center",
                     }}
                     className="step-arrow"
                   >
-                    <ChevronRight size={20} color="#d1d5db" />
+                    <ChevronRight size={20} color="var(--border)" />
                   </div>
                 )}
                 <div
@@ -441,31 +442,39 @@ export default function Home({ navigate, user }) {
                     width: 56,
                     height: 56,
                     borderRadius: 16,
-                    background: "linear-gradient(135deg, #007BFF, #0056b3)",
+                    background:
+                      "linear-gradient(135deg,var(--primary),var(--primary-dark))",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     margin: "0 auto 18px",
-                    fontFamily: "Syne, sans-serif",
+                    fontFamily: "Syne,sans-serif",
                     fontWeight: 800,
                     fontSize: 18,
-                    color: "white",
-                    boxShadow: "0 6px 20px rgba(0,123,255,0.25)",
+                    color: "#fff",
+                    boxShadow: "0 6px 20px rgba(227,30,36,0.25)",
                   }}
                 >
                   {step.num}
                 </div>
                 <h3
                   style={{
-                    fontFamily: "Syne, sans-serif",
+                    fontFamily: "Syne,sans-serif",
                     fontSize: 17,
                     fontWeight: 700,
                     marginBottom: 8,
+                    color: "var(--text)",
                   }}
                 >
                   {step.title}
                 </h3>
-                <p style={{ fontSize: 14, color: "#6b7280", lineHeight: 1.65 }}>
+                <p
+                  style={{
+                    fontSize: 14,
+                    color: "var(--text-muted)",
+                    lineHeight: 1.65,
+                  }}
+                >
                   {step.desc}
                 </p>
               </div>
@@ -474,15 +483,16 @@ export default function Home({ navigate, user }) {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ─────────────────────────────────── */}
-      <section className="section" style={{ background: "#f8faff" }}>
+      {/* ── TESTIMONIALS ─────────────────────────── */}
+      <section className="section">
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <h2
               style={{
-                fontFamily: "Syne, sans-serif",
-                fontSize: "clamp(26px, 3.5vw, 38px)",
+                fontFamily: "Syne,sans-serif",
+                fontSize: "clamp(26px,3.5vw,38px)",
                 fontWeight: 800,
+                color: "var(--text)",
               }}
             >
               What Our Clients Say
@@ -499,7 +509,7 @@ export default function Home({ navigate, user }) {
                 <p
                   style={{
                     fontSize: 14,
-                    color: "#374151",
+                    color: "var(--text-muted)",
                     lineHeight: 1.7,
                     marginBottom: 20,
                     fontStyle: "italic",
@@ -513,22 +523,28 @@ export default function Home({ navigate, user }) {
                       width: 36,
                       height: 36,
                       borderRadius: "50%",
-                      background: `hsl(${i * 80}, 60%, 55%)`,
+                      background: `hsl(${i * 80 + 10},65%,50%)`,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       fontWeight: 700,
-                      color: "white",
+                      color: "#fff",
                       fontSize: 14,
                     }}
                   >
                     {t.name[0]}
                   </div>
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: 14 }}>
+                    <div
+                      style={{
+                        fontWeight: 700,
+                        fontSize: 14,
+                        color: "var(--text)",
+                      }}
+                    >
                       {t.name}
                     </div>
-                    <div style={{ fontSize: 12, color: "#6b7280" }}>
+                    <div style={{ fontSize: 12, color: "var(--text-muted)" }}>
                       {t.role}
                     </div>
                   </div>
@@ -539,20 +555,21 @@ export default function Home({ navigate, user }) {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────── */}
+      {/* ── CTA ──────────────────────────────────── */}
       <section
         style={{
-          background: "linear-gradient(135deg, #007BFF 0%, #0056b3 100%)",
+          background:
+            "linear-gradient(135deg,var(--primary) 0%,var(--accent) 100%)",
           padding: "80px 0",
         }}
       >
         <div className="container" style={{ textAlign: "center" }}>
           <h2
             style={{
-              fontFamily: "Syne, sans-serif",
-              fontSize: "clamp(28px, 4vw, 44px)",
+              fontFamily: "Syne,sans-serif",
+              fontSize: "clamp(28px,4vw,44px)",
               fontWeight: 800,
-              color: "white",
+              color: "#fff",
               marginBottom: 18,
             }}
           >
@@ -581,8 +598,8 @@ export default function Home({ navigate, user }) {
             <button
               onClick={() => navigate("cv")}
               style={{
-                background: "white",
-                color: "#007BFF",
+                background: "#fff",
+                color: "var(--primary)",
                 border: "none",
                 borderRadius: 10,
                 padding: "15px 30px",
@@ -592,7 +609,7 @@ export default function Home({ navigate, user }) {
                 display: "flex",
                 alignItems: "center",
                 gap: 8,
-                fontFamily: "DM Sans, sans-serif",
+                fontFamily: "DM Sans,sans-serif",
                 boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
                 transition: "transform 0.2s",
               }}
@@ -604,37 +621,35 @@ export default function Home({ navigate, user }) {
               <FileText size={18} /> Start with CV
             </button>
             <button
-              onClick={() => navigate("printing")}
+              onClick={() => navigate("photo")}
               style={{
                 background: "transparent",
-                color: "white",
+                color: "#fff",
                 border: "2px solid rgba(255,255,255,0.5)",
                 borderRadius: 10,
                 padding: "15px 30px",
                 fontWeight: 600,
                 fontSize: 16,
                 cursor: "pointer",
-                fontFamily: "DM Sans, sans-serif",
+                fontFamily: "DM Sans,sans-serif",
                 transition: "all 0.2s",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-                e.currentTarget.style.borderColor = "white";
+                e.currentTarget.style.background = "rgba(255,255,255,0.12)";
+                e.currentTarget.style.borderColor = "#fff";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "transparent";
                 e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)";
               }}
             >
-              Explore All Services
+              Photo Editing
             </button>
           </div>
         </div>
       </section>
 
-      <style>{`
-        @media (max-width: 640px) { .step-arrow { display: none !important; } }
-      `}</style>
+      <style>{`@media (max-width:640px) { .step-arrow { display:none !important; } }`}</style>
     </div>
   );
 }

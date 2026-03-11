@@ -8,7 +8,7 @@ const DEMO_ACCOUNTS = {
   "user@mmk.com": { password: "user123", name: "Ali Hassan", role: "user" },
 };
 
-export default function LoginModal({ onClose, onLogin }) {
+export default function LoginModal({ onClose, onLogin, showToast  }) {
   const [isSignup, setIsSignup] = useState(false);
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
