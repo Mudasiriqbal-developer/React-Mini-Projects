@@ -1,19 +1,7 @@
 import { useState, useRef, useEffect } from "react";
-import {
-  User,
-  GraduationCap,
-  Briefcase,
-  Star,
-  Camera,
-  CheckCircle2,
-  Plus,
-  Trash2,
-  Upload,
-  ZoomIn,
-  ZoomOut,
-  RotateCw,
-  Crop,
-  X,
+import {User,GraduationCap,Briefcase,Star,
+  Camera,CheckCircle2,Plus,Trash2,Upload,
+  ZoomIn,ZoomOut,RotateCw,Crop,X,
 } from "lucide-react";
 import { waLink } from "../components/Footer";
 
