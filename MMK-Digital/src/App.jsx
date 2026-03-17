@@ -3,7 +3,7 @@ import "./index.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-// import CVBuilder from "./pages/CVBuilder";
+import CVBuilder from "./pages/CVBuilder";
 import CertificatePage from "./pages/CertificatePage";
 import PrintingPage from "./pages/PrintingPage";
 import AdminPanel from "./pages/AdminPanel";
